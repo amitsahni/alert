@@ -7,7 +7,7 @@ import android.view.Window;
 /**
  * Created by clickapps on 3/7/15.
  */
-public class ProgressViewApplication extends BaseDialog {
+public class ProgressViewApplication extends BaseProgressDialog {
 
     /**
      * Instantiates a new Progress mView application.
