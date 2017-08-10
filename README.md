@@ -33,6 +33,6 @@ Add the JitPack repository to your root build.gradle:
 Add the Gradle dependency:
 ```groovy
 	dependencies {
-		compile 'com.github.amitclickapps:pubnub-util:1.0.1'
+		compile 'com.github.amitclickapps:alert-util:1.0.1'
 	}
 ```
