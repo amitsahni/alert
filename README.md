@@ -19,3 +19,20 @@
                 .positiveButton(android.R.string.ok)
                 .show();
 ```
+Download
+--------
+Add the JitPack repository to your root build.gradle:
+
+```groovy
+	allprojects {
+		repositories {
+			maven { url "https://jitpack.io" }
+		}
+	}
+```
+Add the Gradle dependency:
+```groovy
+	dependencies {
+		compile 'com.github.amitclickapps:pubnub-util:1.0.1'
+	}
+```
