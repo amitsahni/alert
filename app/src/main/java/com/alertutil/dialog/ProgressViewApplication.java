@@ -14,8 +14,9 @@ public class ProgressViewApplication extends BaseDialog {
      *
      * @param context the context
      */
-    public ProgressViewApplication(Context context) {
+    public ProgressViewApplication(Context context, int layoutId) {
         super(context);
+        this.layoutId = layoutId;
     }
 
 
