@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="ProgressViewApplication">
-        <attr name="indeterminateDrawable" format="reference" />
-        <attr name="android:text" />
-        <attr name="android:textColor" />
-        <attr name="android:tint" />
-        <attr name="customTypeface" format="string" />
-        <attr name="android:textAllCaps" />
-        <attr name="letterSpacing" format="float" />
-    </declare-styleable>
-
     <!--ProgressDialog default theme-->
     <style name="Widget.ProgressDialog" parent="@style/Theme.AppCompat.Dialog">
         <item name="android:windowFrame">@null</item>
