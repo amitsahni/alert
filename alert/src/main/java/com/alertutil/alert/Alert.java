@@ -43,8 +43,8 @@ public class Alert {
      * @param context the context
      * @return the toast builder
      */
-    public static ToastParam.ToastBuilder with(@NonNull Context context) {
-        return new ToastParam.ToastBuilder(context);
+    public static ToastBuilder with(@NonNull Context context) {
+        return new ToastBuilder(context);
     }
 
     /**
@@ -54,8 +54,8 @@ public class Alert {
      * @param resId   the res id
      * @return the toast builder
      */
-    public static ToastParam.ToastBuilder with(@NonNull Context context, @StringRes int resId) {
-        return new ToastParam.ToastBuilder(context, resId);
+    public static ToastBuilder with(@NonNull Context context, @StringRes int resId) {
+        return new ToastBuilder(context, resId);
     }
 
     /**
@@ -65,8 +65,8 @@ public class Alert {
      * @param dialogType the dialog type
      * @return the dialog builder
      */
-    public static AlertParam.DialogBuilder with(@NonNull Context context, @NonNull AlertParam.DialogType dialogType) {
-        return new AlertParam.DialogBuilder(context, dialogType, -1);
+    public static DialogBuilder with(@NonNull Context context, @NonNull AlertParam.DialogType dialogType) {
+        return new DialogBuilder(context, dialogType, -1);
     }
 
     /**
@@ -76,8 +76,8 @@ public class Alert {
      * @param dialogType the dialog type
      * @return the dialog builder
      */
-    public static AlertParam.DialogBuilder with(@NonNull Context context, @NonNull AlertParam.DialogType dialogType, @StyleRes int style) {
-        return new AlertParam.DialogBuilder(context, dialogType, style);
+    public static DialogBuilder with(@NonNull Context context, @NonNull AlertParam.DialogType dialogType, @StyleRes int style) {
+        return new DialogBuilder(context, dialogType, style);
     }
 
     /**
@@ -90,8 +90,8 @@ public class Alert {
      * @param resId   the res id
      * @return the snack builder
      */
-    public static SnackBarParam.SnackBuilder with(@NonNull Activity context, @StringRes int resId) {
-        return new SnackBarParam.SnackBuilder(context, resId);
+    public static SnackBuilder with(@NonNull Activity context, @StringRes int resId) {
+        return new SnackBuilder(context, resId);
     }
 
     /**
@@ -101,8 +101,8 @@ public class Alert {
      * @param msg     the msg
      * @return the snack builder
      */
-    public static SnackBarParam.SnackBuilder with(@NonNull Activity context, @NonNull String msg) {
-        return new SnackBarParam.SnackBuilder(context, msg);
+    public static SnackBuilder with(@NonNull Activity context, @NonNull String msg) {
+        return new SnackBuilder(context, msg);
     }
 
     /**
@@ -111,8 +111,8 @@ public class Alert {
      * @param backgroundColor the color for snackbar
      * @return the snack builder
      */
-    public static SnackBarParam.SnackBuilder with(@NonNull Activity context, @StringRes int resId, @ColorRes int backgroundColor) {
-        return new SnackBarParam.SnackBuilder(context, resId, backgroundColor);
+    public static SnackBuilder with(@NonNull Activity context, @StringRes int resId, @ColorRes int backgroundColor) {
+        return new SnackBuilder(context, resId, backgroundColor);
     }
 
     /**
@@ -123,8 +123,8 @@ public class Alert {
      * @param backgroundColor the color for snackbar
      * @return the snack builder
      */
-    public static SnackBarParam.SnackBuilder with(@NonNull Activity context, @NonNull String msg, @ColorRes int backgroundColor) {
-        return new SnackBarParam.SnackBuilder(context, msg, backgroundColor);
+    public static SnackBuilder with(@NonNull Activity context, @NonNull String msg, @ColorRes int backgroundColor) {
+        return new SnackBuilder(context, msg, backgroundColor);
     }
 
     /***************

@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.alertutil.alert.Alert;
 import com.alertutil.alert.AlertParam;
+import com.alertutil.dialog.OnDialogProcess;
 import com.alertutil.dialog.ProgressView;
 
 import butterknife.BindView;
@@ -48,6 +49,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Alert.with(this, AlertParam.DialogType.SINGLE_OPTION)
                         .message(R.string.app_name)
                         .positiveButton(android.R.string.ok)
+                        .listener(new OnDialogProcess() {
+                            @Override
+                            public void onDialog(int dialogId, Bundle bundle, Object object, int selectionType) {
+                                if (selectionType == POSITIVE) {
+                                    Alert.with(getApplicationContext()).message("Positive").show();
+                                }
+                            }
+                        })
                         .show();
                 break;
             case R.id.dbl:
@@ -55,6 +64,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .message(R.string.app_name)
                         .negativeButton(android.R.string.cancel)
                         .positiveButton(android.R.string.ok)
+                        .listener(new OnDialogProcess() {
+                            @Override
+                            public void onDialog(int dialogId, Bundle bundle, Object object, int selectionType) {
+                                if (selectionType == POSITIVE) {
+                                    Alert.with(getApplicationContext()).message("Positive").show();
+                                } else {
+                                    Alert.with(getApplicationContext()).message("Negative").show();
+                                }
+                            }
+                        })
                         .show();
                 break;
             case R.id.toast:
