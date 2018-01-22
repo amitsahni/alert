@@ -15,7 +15,6 @@ import com.alertutil.alert.Alert;
 public class SnackBar extends Alert {
 
     private SnackBar() {
-        super();
     }
 
     /**

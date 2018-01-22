@@ -13,25 +13,17 @@ import com.alertutil.alert.Alert;
 
 public class Dialog extends Alert {
 
-    /**
-     * *******************************************************************************************************************
-     *
-     * @param context    the context
-     * @param dialogType the dialog type
-     * @return the dialog builder
-     */
-    public static DialogBuilder with(@NonNull Context context, @NonNull AlertParam.DialogType dialogType) {
-        return new DialogBuilder(context, dialogType, -1);
+    private Dialog() {
     }
 
     /**
      * *******************************************************************************************************************
      *
      * @param context    the context
-     * @param dialogType the dialog type
      * @return the dialog builder
      */
-    public static DialogBuilder with(@NonNull Context context, @NonNull AlertParam.DialogType dialogType, @StyleRes int style) {
-        return new DialogBuilder(context, dialogType, style);
+    public static DialogBuilder with(@NonNull Context context) {
+        return new DialogBuilder(context);
     }
+
 }

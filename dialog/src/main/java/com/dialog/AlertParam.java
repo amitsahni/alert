@@ -4,8 +4,6 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
-import com.alertutil.dialog.OnDialogProcess;
-
 
 /**
  * The type Alert param.
@@ -21,23 +19,9 @@ public class AlertParam {
      */
     Context context;
     /**
-     * The Message res id.
-     */
-    int messageResId = -1;
-    /**
-     * The constant ITEM.
-     */
-//    Dialog class
-    public static final String ITEM = "item";
-    public static final String POS = "pos";
-    /**
      * The Title.
      */
     String title = "";
-    /**
-     * The Title res id.
-     */
-    int titleResId = -1;
     /**
      * The Alert task id.
      */
@@ -49,11 +33,9 @@ public class AlertParam {
     /**
      * The Listener.
      */
-    OnDialogProcess listener;
-    /**
-     * The Icon.
-     */
-    int icon = -1;
+    OnDialogClickListener listener;
+
+    OnDialogListClickListener onDialogListClickListener;
     /**
      * The theme for Alert dialog
      */
@@ -61,7 +43,7 @@ public class AlertParam {
     /**
      * The Drawable.
      */
-    Drawable drawable;
+    Drawable drawable = null;
     /**
      * The Positive button.
      */
@@ -69,13 +51,8 @@ public class AlertParam {
      * The Negative button.
      */
     negativeButton;
-    /**
-     * The Positive button res id.
-     */
-    int positiveButtonResId = -1, /**
-     * The Negative button res id.
-     */
-    negativeButtonResId = -1, positiveBtnColor = -1, negativeBtnColor = -1;
+
+    int positiveBtnColor = -1, negativeBtnColor = -1;
     /**
      * The Bundle.
      */

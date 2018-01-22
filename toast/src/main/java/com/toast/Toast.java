@@ -14,7 +14,6 @@ import com.alertutil.alert.Alert;
 public class Toast extends Alert {
 
     private Toast() {
-        super();
     }
 
     /**
