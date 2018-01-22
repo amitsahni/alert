@@ -1,4 +1,4 @@
-package com.alertutil.alert;
+package com.toast;
 
 import android.content.Context;
 import android.widget.Toast;

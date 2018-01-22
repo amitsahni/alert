@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.alertutil.alert.Alert;
-import com.alertutil.alert.AlertParam;
 import com.alertutil.dialog.OnDialogProcess;
 import com.alertutil.dialog.ProgressView;
 
@@ -46,38 +45,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.single:
-                Alert.with(this, AlertParam.DialogType.SINGLE_OPTION)
-                        .message(R.string.app_name)
-                        .positiveButton(android.R.string.ok)
-                        .listener(new OnDialogProcess() {
-                            @Override
-                            public void onDialog(int dialogId, Bundle bundle, Object object, int selectionType) {
-                                if (selectionType == POSITIVE) {
-                                    Alert.with(getApplicationContext()).message("Positive").show();
-                                }
-                            }
-                        })
-                        .show();
+//                Alert.with(this, AlertParam.DialogType.SINGLE_OPTION)
+//                        .message(R.string.app_name)
+//                        .positiveButton(android.R.string.ok)
+//                        .listener(new OnDialogProcess() {
+//                            @Override
+//                            public void onDialog(int dialogId, Bundle bundle, Object object, int selectionType) {
+//                                if (selectionType == POSITIVE) {
+////                                    Alert.with(MainActivity.this).message("Positive").show();
+//                                }
+//                            }
+//                        })
+//                        .show();
                 break;
             case R.id.dbl:
-                Alert.with(this, AlertParam.DialogType.DOUBLE_OPTION)
-                        .message(R.string.app_name)
-                        .negativeButton(android.R.string.cancel)
-                        .positiveButton(android.R.string.ok)
-                        .listener(new OnDialogProcess() {
-                            @Override
-                            public void onDialog(int dialogId, Bundle bundle, Object object, int selectionType) {
-                                if (selectionType == POSITIVE) {
-                                    Alert.with(getApplicationContext()).message("Positive").show();
-                                } else {
-                                    Alert.with(getApplicationContext()).message("Negative").show();
-                                }
-                            }
-                        })
-                        .show();
+//                Alert.with(this, AlertParam.DialogType.DOUBLE_OPTION)
+//                        .message(R.string.app_name)
+//                        .negativeButton(android.R.string.cancel)
+//                        .positiveButton(android.R.string.ok)
+//                        .listener(new OnDialogProcess() {
+//                            @Override
+//                            public void onDialog(int dialogId, Bundle bundle, Object object, int selectionType) {
+//                                if (selectionType == POSITIVE) {
+//                                    // Alert.with(getApplicationContext()).message("Positive").show();
+//                                } else {
+//                                    // Alert.with(getApplicationContext()).message("Negative").show();
+//                                }
+//                            }
+//                        })
+//                        .show();
                 break;
             case R.id.toast:
-                Alert.with(getApplicationContext(), R.string.app_name).show();
+//                Alert.with(getApplicationContext(), R.string.app_name).show();
                 break;
             case R.id.progress:
                 ProgressView progressView = new ProgressView(this, R.style.Widget_ProgressDialog, R.layout.activity_main);

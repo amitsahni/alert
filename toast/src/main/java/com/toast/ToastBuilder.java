@@ -1,4 +1,4 @@
-package com.alertutil.alert;
+package com.toast;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -94,7 +94,7 @@ public class ToastBuilder {
             TextView textView = (TextView) ((LinearLayout) mToast.getView()).getChildAt(0);
             //check typeface
             if (!TextUtils.isEmpty(toastParam.typeface)) {
-                Alert.get().setTypeface(toastParam.context, textView, toastParam.typeface);
+                Toast.get().setTypeface(toastParam.context, textView, toastParam.typeface);
             }
         } catch (Exception e) {
             e.printStackTrace();

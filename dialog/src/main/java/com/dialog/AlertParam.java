@@ -1,4 +1,4 @@
-package com.alertutil.alert;
+package com.dialog;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;

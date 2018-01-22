@@ -19,5 +19,6 @@ android {
 }
 
 dependencies {
-    compile deps.appcompat
+    compile deps.design
+    compile project(':alert')
 }

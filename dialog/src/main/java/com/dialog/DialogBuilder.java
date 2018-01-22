@@ -1,4 +1,4 @@
-package com.alertutil.alert;
+package com.dialog;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -14,6 +14,7 @@ import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.widget.TextView;
 
+import com.alertutil.alert.Alert;
 import com.alertutil.dialog.OnDialogProcess;
 
 /**
@@ -360,6 +361,7 @@ public class DialogBuilder {
 
         try {
             //find message text mView
+            TextView titleTextView = (TextView) dialog.findViewById(android.R.id.title);
             TextView messageTextView = (TextView) dialog.findViewById(android.R.id.message);
             TextView button1TextView = (TextView) dialog.findViewById(android.R.id.button1);
             TextView button2TextView = (TextView) dialog.findViewById(android.R.id.button2);
@@ -368,6 +370,8 @@ public class DialogBuilder {
             String typeface;
             if (!TextUtils.isEmpty(mAlertParam.typeface)) {
                 typeface = mAlertParam.typeface;
+                //set title typeface
+                Alert.get().setTypeface(mAlertParam.context, titleTextView, typeface);
                 //set message typeface
                 Alert.get().setTypeface(mAlertParam.context, messageTextView, typeface);
                 //set button1 typeface
