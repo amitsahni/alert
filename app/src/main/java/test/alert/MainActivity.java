@@ -12,7 +12,7 @@ import com.dialog.OnDialogClickListener;
 import com.dialog.OnDialogListClickListener;
 import com.pref.PrefUtil;
 import com.progressView.ProgressView;
-import com.snakebar.SnackBar;
+import com.snackbar.SnackBar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Dialog.with(this)
                         .asSingleOption("Ok")
                         .title("title")
+                        .tag(1)
                         .message("message")
                         .icon(android.R.drawable.sym_action_call)
                         .onClick(new OnDialogClickListener() {
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 SnackBar.with(MainActivity.this, button.name())
                                         .actionMessage("Ok")
                                         .info().show();
+
                             }
                         })
                         .show();
