@@ -91,3 +91,13 @@ compile 'com.github.amitsahni.alert:snackbar:version'
 ``
 compile 'com.github.amitsahni.alert:pref:version'
 ``
+
+Add the JitPack repository to your root build.gradle:
+
+```
+	allprojects {
+		repositories {
+			maven { url "https://jitpack.io" }
+		}
+	}
+```
