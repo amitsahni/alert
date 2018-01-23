@@ -1,4 +1,4 @@
-package com.alertutil.dialog;
+package com.progressView;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -64,4 +64,5 @@ public class ProgressView extends BaseProgressDialog {
         super.onCreate(savedInstanceState);
         setContentView(this.view);
     }
+
 }

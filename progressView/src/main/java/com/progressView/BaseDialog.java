@@ -1,4 +1,4 @@
-package com.alertutil.dialog;
+package com.progressView;
 
 import android.app.Dialog;
 import android.content.Context;

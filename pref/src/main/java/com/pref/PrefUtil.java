@@ -1,4 +1,4 @@
-package com.alertutil.preferences;
+package com.pref;
 
 import android.content.Context;
 

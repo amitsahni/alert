@@ -7,10 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.alertutil.dialog.ProgressView;
 import com.dialog.Dialog;
 import com.dialog.OnDialogClickListener;
 import com.dialog.OnDialogListClickListener;
+import com.pref.PrefUtil;
+import com.progressView.ProgressView;
 import com.snakebar.SnackBar;
 
 import butterknife.BindView;
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.toast:
                 Dialog.with(this)
-                        .asList("aaa", "aaabbb")
+                        .asList("aaa")
                         .title("title")
                         .onClick(new OnDialogListClickListener() {
                             @Override
@@ -88,6 +89,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 SnackBar.with(MainActivity.this, value)
                                         .actionMessage("Ok")
                                         .info().show();
+                                PrefUtil.with(MainActivity.this)
+                                        .save("key","value");
                             }
                         })
                         .show();

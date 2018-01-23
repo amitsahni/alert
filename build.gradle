@@ -22,7 +22,8 @@ allprojects {
 }
 
 ext.deps = [
-        appcompat: 'com.android.support:appcompat-v7:27.0.2',
-        design   : 'com.android.support:design:27.0.2',
+        appcompat  : 'com.android.support:appcompat-v7:27.0.2',
+        design     : 'com.android.support:design:27.0.2',
+        annotations: 'com.android.support:support-annotations:27.0.2'
 ]
 
