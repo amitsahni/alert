@@ -74,20 +74,18 @@ List
                })
               .show();
 ```
-Download
---------
-Add the JitPack repository to your root build.gradle:
+``
+compile 'com.github.amitsahni.alert:snackbar:1.0.0-alpha'
+``
 
-```groovy
-	allprojects {
-		repositories {
-			maven { url "https://jitpack.io" }
-		}
-	}
+### Pref
 ```
-Add the Gradle dependency:
-```groovy
-	dependencies {
-		compile 'com.github.amitsahni:alert-util:1.0.1'
-	}
+    PrefUtil.with(context)
+            .save(key,value);
+    
+    PrefUtil.with(context)
+            .getString(key,defaultValue);    
 ```
+``
+compile 'com.github.amitsahni.alert:pref:1.0.0-alpha'
+``
