@@ -77,7 +77,7 @@ List
               .show();
 ```
 ``
-compile 'com.github.amitsahni.alert:snackbar:version'
+compile 'com.github.amitsahni.alert:dialog:version'
 ``
 
 ### Pref
