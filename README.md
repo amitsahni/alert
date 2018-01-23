@@ -1,3 +1,5 @@
+version - 1.0.0-alpha
+
 ### ProgressView
 ```
         ProgressView progressView = new ProgressView(this, R.style.Widget_ProgressDialog, R.layout.dialog_progress_base);
@@ -5,7 +7,7 @@
 ```     
 
 ``
-compile 'com.github.amitsahni.alert:progressView:1.0.0-alpha'
+compile 'com.github.amitsahni.alert:progressView:version'
 ``
 
 ### Toast
@@ -16,7 +18,7 @@ compile 'com.github.amitsahni.alert:progressView:1.0.0-alpha'
                 .show();
 ```   
 ``
-compile 'com.github.amitsahni.alert:toast:1.0.0-alpha'
+compile 'com.github.amitsahni.alert:toast:version'
 ``
 ### SnakeBar
 ```
@@ -28,7 +30,7 @@ compile 'com.github.amitsahni.alert:toast:1.0.0-alpha'
                 .show();
 ```
 ``
-compile 'com.github.amitsahni.alert:snakebar:1.0.0-alpha'
+compile 'com.github.amitsahni.alert:snakebar:version'
 ``
 ### Dailog
 Single Option
@@ -75,7 +77,7 @@ List
               .show();
 ```
 ``
-compile 'com.github.amitsahni.alert:snackbar:1.0.0-alpha'
+compile 'com.github.amitsahni.alert:snackbar:version'
 ``
 
 ### Pref
@@ -87,5 +89,5 @@ compile 'com.github.amitsahni.alert:snackbar:1.0.0-alpha'
             .getString(key,defaultValue);    
 ```
 ``
-compile 'com.github.amitsahni.alert:pref:1.0.0-alpha'
+compile 'com.github.amitsahni.alert:pref:version'
 ``
