@@ -20,7 +20,7 @@ compile 'com.github.amitsahni.alert:progressView:version'
 ``
 compile 'com.github.amitsahni.alert:toast:version'
 ``
-### SnakeBar
+### SnackBar
 ```
         SnackBar.with(acitivityContext, message)
                 .actionMessage("Ok")
@@ -30,7 +30,7 @@ compile 'com.github.amitsahni.alert:toast:version'
                 .show();
 ```
 ``
-compile 'com.github.amitsahni.alert:snakebar:version'
+compile 'com.github.amitsahni.alert:snackbar:version'
 ``
 ### Dailog
 Single Option

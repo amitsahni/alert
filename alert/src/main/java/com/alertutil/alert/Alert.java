@@ -1,13 +1,9 @@
 package com.alertutil.alert;
 
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
-import android.support.annotation.ColorRes;
 import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
-import android.support.annotation.StyleRes;
 import android.widget.TextView;
 
 

@@ -46,7 +46,7 @@ dependencies {
 //    compile 'com.github.amitsahni.alert:dialog:1.0.0-alpha'
 //    compile 'com.github.amitsahni.alert:snakebar:1.0.0-alpha'
     compile project(':dialog')
-    compile project(':snackebar')
+    compile project(':snackbar')
     compile project(':toast')
     compile project(':pref')
     compile project(':progressView')
