@@ -1,13 +1,14 @@
 version - 1.0.0-alpha
 
-### ProgressView
+### CustomDialog
 ```
-        ProgressView progressView = new ProgressView(this, R.style.Widget_ProgressDialog, R.layout.dialog_progress_base);
-        progressView.show();
+        CustomDialog.with(this)
+                    .view(R.layout.activity_main)
+                    .build();
 ```     
 
 ``
-compile 'com.github.amitsahni.alert:progressView:version'
+compile 'com.github.amitsahni.alert:customdialog:version'
 ``
 
 ### Toast
