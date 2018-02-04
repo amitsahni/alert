@@ -49,5 +49,5 @@ dependencies {
     compile project(':snackbar')
     compile project(':toast')
     compile project(':pref')
-    compile project(':progressView')
+    compile project(':customdialog')
 }

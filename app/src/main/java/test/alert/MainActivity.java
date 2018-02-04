@@ -11,7 +11,7 @@ import com.dialog.Dialog;
 import com.dialog.OnDialogClickListener;
 import com.dialog.OnDialogListClickListener;
 import com.pref.PrefUtil;
-import com.progressView.ProgressView;
+import com.progressView.CustomDialog;
 import com.snackbar.SnackBar;
 
 import butterknife.BindView;
@@ -92,14 +92,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                         .actionMessage("Ok")
                                         .info().show();
                                 PrefUtil.with(MainActivity.this)
-                                        .save("key","value");
+                                        .save("key", "value");
                             }
                         })
                         .show();
                 break;
             case R.id.progress:
-                ProgressView progressView = new ProgressView(this, R.style.Widget_ProgressDialog, R.layout.activity_main);
-                progressView.show();
+                CustomDialog.with(this)
+                        .view(R.layout.activity_main)
+                        .build();
                 break;
         }
     }
