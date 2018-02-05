@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dbl.setOnClickListener(this);
         toast.setOnClickListener(this);
         progress.setOnClickListener(this);
+
     }
 
     @Override
