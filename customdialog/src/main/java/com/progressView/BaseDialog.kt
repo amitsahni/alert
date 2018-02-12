@@ -18,7 +18,7 @@ open class BaseDialog : Dialog, View.OnClickListener {
      *
      * @param context the context
      */
-    constructor(context: Context?) : super(context) {
+    constructor(context: Context) : super(context) {
         hideTitle()
     }
 
@@ -28,7 +28,7 @@ open class BaseDialog : Dialog, View.OnClickListener {
      * @param context the context
      * @param theme   the theme
      */
-    constructor(context: Context?, theme: Int) : super(context, theme) {
+    constructor(context: Context, theme: Int) : super(context, theme) {
         hideTitle()
     }
 

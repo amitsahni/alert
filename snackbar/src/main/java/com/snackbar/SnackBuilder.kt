@@ -23,23 +23,19 @@ class SnackBuilder constructor(context: Activity) {
     }
 
     constructor(context: Activity, @StringRes resId: Int) : this(context) {
-        param = SnackBarParam()
         param.message = context.getString(resId)
     }
 
     constructor(context: Activity, msg: String) : this(context) {
-        param = SnackBarParam()
         param.message = msg
     }
 
     constructor(context: Activity, @StringRes resId: Int, @ColorRes backgroundColor: Int) : this(context) {
-        param = SnackBarParam()
         param.message = context.getString(resId)
         param.actionBackgroundResId = backgroundColor
     }
 
     constructor(context: Activity, msg: String, @ColorRes backgroundColor: Int) : this(context) {
-        param = SnackBarParam()
         param.message = msg
         param.actionBackgroundResId = backgroundColor
     }

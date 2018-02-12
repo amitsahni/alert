@@ -10,20 +10,21 @@ import android.view.Window
 class CustomView : BaseDialog {
     private var param: DialogParam
 
-    constructor(param: DialogParam) : super(param.context) {
+    constructor(param: DialogParam) : super(param.context!!) {
         this.param = param
     }
 
 
-    constructor(param: DialogParam, theme: Int) : super(param.context, theme) {
+    constructor(param: DialogParam, theme: Int) : super(param.context!!, theme) {
         this.param = param
     }
 
-    override fun onCreate(savedInstanceState: Bundle) {
+    override
+    fun onCreate(savedInstanceState: Bundle?) {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         super.onCreate(savedInstanceState)
-        setContentView(this.param.view!!)
-        param.view!!.isClickable = true
+        setContentView(this.param.view)
+        param.view?.isClickable = true
         if (param.ids != null) {
             param.ids!!
                     .map { param.view?.findViewById<View>(it) }

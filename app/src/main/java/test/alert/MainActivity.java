@@ -56,15 +56,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .tag(1)
                         .message("message")
                         .icon(android.R.drawable.sym_action_call)
-                        .onClick(new OnDialogClickListener() {
-                            @Override
-                            public void onClick(int tag, DialogInterface dialog, int pos, Button button) {
-                                SnackBar.with(MainActivity.this, button.name())
-                                        .actionMessage("Ok")
-                                        .info().show();
-
-                            }
-                        })
                         .show();
                 break;
             case R.id.dbl:

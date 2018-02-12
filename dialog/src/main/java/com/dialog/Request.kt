@@ -8,10 +8,8 @@ import android.support.annotation.StringRes
 import android.support.annotation.StyleRes
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
-import android.text.TextUtils
 import android.view.View
 import android.widget.TextView
-
 import com.alertutil.alert.Alert
 
 @Suppress("UNCHECKED_CAST")
@@ -119,11 +117,11 @@ class Request {
                 alert = AlertDialog.Builder(param.context!!)
             }
             // set title
-            if (!TextUtils.isEmpty(param.title)) {
+            if (param.title.isNotEmpty()) {
                 alert.setTitle(param.title)
             }
             // set the message
-            if (!TextUtils.isEmpty(param.message)) {
+            if (param.message.isNotEmpty()) {
                 alert.setMessage(param.message)
             }
             alert.setCancelable(param.isCancelable)
@@ -132,7 +130,7 @@ class Request {
                 alert.setIcon(param.drawable)
             }
             // set Positive button functionality
-            if (!TextUtils.isEmpty(param.positiveButton)) {
+            if (param.positiveButton.isNotEmpty()) {
                 alert.setPositiveButton(param.positiveButton,
                         DialogClick(param, OnDialogClickListener.Button.POSITIVE))
             }
@@ -165,7 +163,7 @@ class Request {
         override fun show() {
             val alert = addGenericParam()
             // set Negative button functionality
-            if (!TextUtils.isEmpty(param.negativeButton)) {
+            if (param.negativeButton.isNotEmpty()) {
                 alert.setNegativeButton(param.negativeButton,
                         DialogClick(param, OnDialogClickListener.Button.NEGATIVE))
             }
@@ -242,7 +240,7 @@ class Request {
                 alert = AlertDialog.Builder(param.context!!)
             }
             // set title
-            if (!TextUtils.isEmpty(param.title)) {
+            if (param.title.isNotEmpty()) {
                 alert.setTitle(param.title)
             }
             alert.setCancelable(param.isCancelable)
@@ -264,7 +262,7 @@ class Request {
                 val button3TextView = dialog.findViewById<View>(android.R.id.button3) as TextView?
                 //check typeface
                 val typeface: String?
-                if (!TextUtils.isEmpty(param.typeface)) {
+                if (param.typeface.isNotEmpty()) {
                     typeface = param.typeface
                     //set title typeface
                     Alert.get().setTypeface(param.context!!, titleTextView!!, typeface!!)

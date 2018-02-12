@@ -21,7 +21,6 @@ class ToastBuilder constructor(context: Context) {
     }
 
     constructor(context: Context, @StringRes resId: Int) : this(context) {
-        toastParam = ToastParam()
         toastParam.messageResId = resId
     }
 
