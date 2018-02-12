@@ -25,7 +25,7 @@ class CustomView : BaseDialog {
         super.onCreate(savedInstanceState)
         setContentView(this.param.view)
         param.view?.isClickable = true
-        if (param.ids != null) {
+        param.ids?.let {
             param.ids!!
                     .map { param.view?.findViewById<View>(it) }
                     .forEach {

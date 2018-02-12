@@ -23,7 +23,9 @@ class DialogBuilder(context: Context) {
     }
 
     fun asSingleOption(@StringRes positiveButton: Int): Request.SingleOptionBuilder {
-        param.positiveButton = param.context!!.getString(positiveButton)
+        param.context?.let {
+            param.positiveButton = param.context!!.getString(positiveButton)
+        }
         param.dialogType = AlertParam.DialogType.SINGLE_OPTION
         return Request.SingleOptionBuilder(param)
     }
@@ -38,8 +40,10 @@ class DialogBuilder(context: Context) {
 
     fun asDoubleOption(@StringRes positiveButton: Int,
                        @StringRes negativeButton: Int): Request.DoubleOptionBuilder {
-        param.positiveButton = param.context!!.getString(positiveButton)
-        param.negativeButton = param.context!!.getString(negativeButton)
+        param.context?.let {
+            param.positiveButton = param.context!!.getString(positiveButton)
+            param.negativeButton = param.context!!.getString(negativeButton)
+        }
         param.dialogType = AlertParam.DialogType.DOUBLE_OPTION
         return Request.DoubleOptionBuilder(param)
     }

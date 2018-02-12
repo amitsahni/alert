@@ -5,7 +5,7 @@ import android.support.annotation.ColorRes
 import android.support.annotation.StringRes
 import android.support.design.widget.Snackbar
 import android.support.v4.content.ContextCompat
-import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 
@@ -23,7 +23,9 @@ class SnackBuilder constructor(context: Activity) {
     }
 
     constructor(context: Activity, @StringRes resId: Int) : this(context) {
-        param.message = context.getString(resId)
+        context?.let {
+            param.message = context.getString(resId)
+        }
     }
 
     constructor(context: Activity, msg: String) : this(context) {
@@ -46,7 +48,9 @@ class SnackBuilder constructor(context: Activity) {
     }
 
     fun actionMessage(@StringRes resId: Int): SnackBuilder {
-        param.actionMessage = param.context!!.getString(resId)
+        param.context?.let {
+            param.actionMessage = param.context!!.getString(resId)
+        }
         return this
     }
 
@@ -120,9 +124,9 @@ class SnackBuilder constructor(context: Activity) {
      * Show.
      */
     fun show(): SnackBarParam {
-        if (snackbar != null)
-            snackbar!!.dismiss()
+        snackbar?.dismiss()
         if (param.context == null) {
+            Log.e(javaClass.name, "Context can't be null")
             return param
         }
         var context = param.context!!
@@ -132,10 +136,10 @@ class SnackBuilder constructor(context: Activity) {
         snackbar = Snackbar.make(param.snackBarView!!, "", param.snackBarDuration)
 
         // Checked for Message
-        if (!TextUtils.isEmpty(param.message)) {
+        if (param.message.isNotEmpty()) {
             snackbar?.setText(param.message)
         } else {
-            snackbar!!.setText("")
+            snackbar?.setText("")
         }
 
         // checked for ActionMessage

@@ -3,6 +3,7 @@ package com.toast
 import android.content.Context
 import android.support.annotation.StringRes
 import android.text.TextUtils
+import android.util.Log
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -45,9 +46,11 @@ class ToastBuilder constructor(context: Context) {
     }
 
     fun show(): ToastParam {
-        if (null != mToast) {
-            mToast?.cancel()
+        if (toastParam.context == null) {
+            Log.e(javaClass.canonicalName, "Context can't be null")
+            return toastParam
         }
+        mToast?.cancel()
         if (toastParam.messageResId != -1) {
             mToast = Toast.makeText(toastParam.context?.applicationContext, toastParam.messageResId, toastParam.duration)
         } else {

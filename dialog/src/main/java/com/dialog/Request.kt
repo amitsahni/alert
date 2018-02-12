@@ -8,6 +8,7 @@ import android.support.annotation.StringRes
 import android.support.annotation.StyleRes
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import com.alertutil.alert.Alert
@@ -26,7 +27,9 @@ class Request {
         }
 
         fun message(@StringRes resId: Int): SingleOptionBuilder {
-            param.message = param.context!!.getString(resId)
+            param.context?.let {
+                param.message = param.context!!.getString(resId)
+            }
             return this
         }
 
@@ -36,12 +39,16 @@ class Request {
         }
 
         fun title(@StringRes resId: Int): SingleOptionBuilder {
-            param.title = param.context!!.getString(resId)
+            param.context?.let {
+                param.title = param.context!!.getString(resId)
+            }
             return this
         }
 
         fun icon(@DrawableRes icon: Int): SingleOptionBuilder {
-            param.drawable = ContextCompat.getDrawable(param.context!!, icon)
+            param.context?.let {
+                param.drawable = ContextCompat.getDrawable(param.context!!, icon)
+            }
             return this
         }
 
@@ -126,7 +133,7 @@ class Request {
             }
             alert.setCancelable(param.isCancelable)
             // set icon
-            if (param.drawable != null) {
+            param.drawable?.let {
                 alert.setIcon(param.drawable)
             }
             // set Positive button functionality
@@ -138,6 +145,10 @@ class Request {
         }
 
         open fun show() {
+            if (param.context == null) {
+                Log.e(javaClass.name, "Context can't be null")
+                return
+            }
             val alert = addGenericParam()
             //create dialog
             val dialog = alert.create()
@@ -161,6 +172,10 @@ class Request {
         }
 
         override fun show() {
+            if (param.context == null) {
+                Log.e(javaClass.name, "Context can't be null")
+                return
+            }
             val alert = addGenericParam()
             // set Negative button functionality
             if (param.negativeButton.isNotEmpty()) {
@@ -193,12 +208,16 @@ class Request {
         }
 
         fun title(@StringRes resId: Int): ListOptionBuilder {
-            param.title = param.context!!.getString(resId)
+            param.context?.let {
+                param.title = param.context!!.getString(resId)
+            }
             return this
         }
 
         fun icon(@DrawableRes icon: Int): ListOptionBuilder {
-            param.drawable = ContextCompat.getDrawable(param.context!!, icon)
+            param.context?.let {
+                param.drawable = ContextCompat.getDrawable(param.context!!, icon)
+            }
             return this
         }
 
@@ -233,6 +252,10 @@ class Request {
         }
 
         fun show() {
+            if (param.context == null) {
+                Log.e(javaClass.name, "Context can't be null")
+                return
+            }
             val alert: AlertDialog.Builder
             if (param.style != -1) {
                 alert = AlertDialog.Builder(param.context!!, param.style)
@@ -245,7 +268,7 @@ class Request {
             }
             alert.setCancelable(param.isCancelable)
             // set icon
-            if (param.drawable != null) {
+            param.drawable?.let {
                 alert.setIcon(param.drawable)
             }
             alert.setItems(param.list, DialogListClick(param))
@@ -261,19 +284,28 @@ class Request {
                 val button2TextView = dialog.findViewById<View>(android.R.id.button2) as TextView?
                 val button3TextView = dialog.findViewById<View>(android.R.id.button3) as TextView?
                 //check typeface
-                val typeface: String?
                 if (param.typeface.isNotEmpty()) {
-                    typeface = param.typeface
-                    //set title typeface
-                    Alert.get().setTypeface(param.context!!, titleTextView!!, typeface!!)
-                    //set message typeface
-                    Alert.get().setTypeface(param.context!!, messageTextView!!, typeface)
-                    //set button1 typeface
-                    Alert.get().setTypeface(param.context!!, button1TextView!!, typeface)
-                    //set button2 typeface
-                    Alert.get().setTypeface(param.context!!, button2TextView!!, typeface)
-                    //set button3 typeface
-                    Alert.get().setTypeface(param.context!!, button3TextView!!, typeface)
+                    val typeface = param.typeface
+                    titleTextView?.let {
+                        //set title typeface
+                        Alert.get().setTypeface(param.context!!, titleTextView, typeface)
+                    }
+                    messageTextView?.let {
+                        //set message typeface
+                        Alert.get().setTypeface(param.context!!, messageTextView, typeface)
+                    }
+                    button1TextView?.let {
+                        //set button1 typeface
+                        Alert.get().setTypeface(param.context!!, button1TextView, typeface)
+                    }
+                    button2TextView?.let {
+                        //set button2 typeface
+                        Alert.get().setTypeface(param.context!!, button2TextView, typeface)
+                    }
+                    button3TextView?.let {
+                        //set button3 typeface
+                        Alert.get().setTypeface(param.context!!, button3TextView, typeface)
+                    }
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
