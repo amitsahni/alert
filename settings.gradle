@@ -1,1 +1,1 @@
-include ':app',":alert"
+include ':app',':alert',":snackbar",":toast",":dialog",":pref",":customdialog"
