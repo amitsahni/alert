@@ -1,5 +1,6 @@
 package com.progressView
 
+import android.app.Dialog
 import android.support.annotation.IdRes
 import android.support.annotation.StyleRes
 import android.view.View
@@ -39,6 +40,18 @@ class RequestBuilder {
                 customView.setCancelable(param.isCancelable)
                 customView.show()
             }
+        }
+
+        fun getDialog(): Dialog {
+            val customView: CustomView
+            if (param.theme == -1) {
+                customView = CustomView(param)
+                customView.setCancelable(param.isCancelable)
+            } else {
+                customView = CustomView(param, param.theme)
+                customView.setCancelable(param.isCancelable)
+            }
+            return customView
         }
     }
 }
