@@ -20,5 +20,8 @@ android {
 }
 
 dependencies {
-    compile project(':alert')
+    implementation deps.kotlin
+    implementation deps.annotations
+    implementation deps.design
+    api project(':alert')
 }
