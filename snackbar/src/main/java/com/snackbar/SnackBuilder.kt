@@ -23,7 +23,7 @@ class SnackBuilder constructor(context: Activity) {
     }
 
     constructor(context: Activity, @StringRes resId: Int) : this(context) {
-        context?.let {
+        context.let {
             param.message = context.getString(resId)
         }
     }

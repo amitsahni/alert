@@ -61,7 +61,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             public void onClick(int tag, DialogInterface dialog, int pos, Button button) {
                                 SnackBar.with(MainActivity.this, button.name())
                                         .actionMessage("Ok")
-                                        .info().show();
+                                        .info()
+                                        .show();
 
                             }
                         })

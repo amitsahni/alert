@@ -11,7 +11,6 @@ import android.support.v7.app.AlertDialog
 import android.util.Log
 import android.view.View
 import android.widget.TextView
-import com.alertutil.alert.Alert
 
 @Suppress("UNCHECKED_CAST")
 /**
@@ -100,20 +99,19 @@ class Request {
                 if (param.typeface.isNotEmpty()) {
                     typeface = param.typeface
                     //set title typeface
-                    Alert.get().setTypeface(param.context!!, titleTextView!!, typeface)
+                    Dialog.get().setTypeface(param.context!!, titleTextView!!, typeface)
                     //set message typeface
-                    Alert.get().setTypeface(param.context!!, messageTextView!!, typeface)
+                    Dialog.get().setTypeface(param.context!!, messageTextView!!, typeface)
                     //set button1 typeface
-                    Alert.get().setTypeface(param.context!!, button1TextView!!, typeface)
+                    Dialog.get().setTypeface(param.context!!, button1TextView!!, typeface)
                     //set button2 typeface
-                    Alert.get().setTypeface(param.context!!, button2TextView!!, typeface)
+                    Dialog.get().setTypeface(param.context!!, button2TextView!!, typeface)
                     //set button3 typeface
-                    Alert.get().setTypeface(param.context!!, button3TextView!!, typeface)
+                    Dialog.get().setTypeface(param.context!!, button3TextView!!, typeface)
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
             }
-
         }
 
         protected fun addGenericParam(): AlertDialog.Builder {
@@ -288,23 +286,23 @@ class Request {
                     val typeface = param.typeface
                     titleTextView?.let {
                         //set title typeface
-                        Alert.get().setTypeface(param.context!!, titleTextView, typeface)
+                        Dialog.get().setTypeface(param.context!!, titleTextView, typeface)
                     }
                     messageTextView?.let {
                         //set message typeface
-                        Alert.get().setTypeface(param.context!!, messageTextView, typeface)
+                        Dialog.get().setTypeface(param.context!!, messageTextView, typeface)
                     }
                     button1TextView?.let {
                         //set button1 typeface
-                        Alert.get().setTypeface(param.context!!, button1TextView, typeface)
+                        Dialog.get().setTypeface(param.context!!, button1TextView, typeface)
                     }
                     button2TextView?.let {
                         //set button2 typeface
-                        Alert.get().setTypeface(param.context!!, button2TextView, typeface)
+                        Dialog.get().setTypeface(param.context!!, button2TextView, typeface)
                     }
                     button3TextView?.let {
                         //set button3 typeface
-                        Alert.get().setTypeface(param.context!!, button3TextView, typeface)
+                        Dialog.get().setTypeface(param.context!!, button3TextView, typeface)
                     }
                 }
             } catch (e: Exception) {
