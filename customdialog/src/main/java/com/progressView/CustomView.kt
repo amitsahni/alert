@@ -26,8 +26,7 @@ class CustomView : BaseDialog {
         setContentView(this.param.view)
         param.view?.isClickable = true
         param.ids?.let {
-            param.ids!!
-                    .map { param.view?.findViewById<View>(it) }
+            it.map { param.view?.findViewById<View>(it) }
                     .forEach {
                         it?.setOnClickListener { view ->
                             param.clickListener?.onClick(view)

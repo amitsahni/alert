@@ -7,7 +7,7 @@ import android.support.annotation.StringRes
  * Created by clickapps on 2/11/17.
  */
 
-class DialogBuilder(context: Context) {
+class DialogBuilder constructor(context: Context) {
 
     private val param: AlertParam = AlertParam()
 
