@@ -49,7 +49,7 @@ class SnackBuilder constructor(context: Activity) {
 
     fun actionMessage(@StringRes resId: Int): SnackBuilder {
         param.context?.let {
-            param.actionMessage = param.context!!.getString(resId)
+            param.actionMessage = it.getString(resId)
         }
         return this
     }
@@ -144,9 +144,9 @@ class SnackBuilder constructor(context: Activity) {
 
         // checked for ActionMessage
         if (param.actionMessage.isNotEmpty()) {
-            snackbar!!.setAction(param.actionMessage, { v ->
+            snackbar!!.setAction(param.actionMessage) { v ->
                 param.onSnackBarActionListener?.onSnackBarActionClicked(param.alertTaskId, v)
-            })
+            }
         } else {
             snackbar?.setAction("", null)
         }
