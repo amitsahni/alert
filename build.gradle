@@ -24,9 +24,9 @@ allprojects {
 }
 
 ext.deps = [
-        appcompat  : 'com.android.support:appcompat-v7:27.1.1',
-        design     : 'com.android.support:design:27.1.1',
-        annotations: 'com.android.support:support-annotations:27.1.1',
-        kotlin     : 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.21'
+        //appcompat  : 'com.android.support:appcompat-v7:27.1.1',
+//        design     : 'com.android.support:design:27.1.1',
+//        annotations: 'com.android.support:support-annotations:27.1.1',
+//        kotlin     : 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.21'
 ]
 
