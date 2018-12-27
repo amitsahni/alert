@@ -1,4 +1,4 @@
-version - 1.0.0-alpha
+version - 1.0.5
 
 ### CustomDialog
 ```
@@ -8,7 +8,7 @@ version - 1.0.0-alpha
 ```     
 
 ``
-compile 'com.github.amitsahni.alert:customdialog:version'
+api 'com.github.amitsahni.alert:customdialog:version'
 ``
 
 ### Toast
@@ -19,7 +19,7 @@ compile 'com.github.amitsahni.alert:customdialog:version'
                 .show();
 ```   
 ``
-compile 'com.github.amitsahni.alert:toast:version'
+api 'com.github.amitsahni.alert:toast:version'
 ``
 ### SnackBar
 ```
@@ -31,7 +31,7 @@ compile 'com.github.amitsahni.alert:toast:version'
                 .show();
 ```
 ``
-compile 'com.github.amitsahni.alert:snackbar:version'
+api 'com.github.amitsahni.alert:snackbar:version'
 ``
 ### Dailog
 Single Option
@@ -78,7 +78,7 @@ List
               .show();
 ```
 ``
-compile 'com.github.amitsahni.alert:dialog:version'
+api 'com.github.amitsahni.alert:dialog:version'
 ``
 
 ### Pref
@@ -90,7 +90,7 @@ compile 'com.github.amitsahni.alert:dialog:version'
             .getString(key,defaultValue);    
 ```
 ``
-compile 'com.github.amitsahni.alert:pref:version'
+api 'com.github.amitsahni.alert:pref:version'
 ``
 
 Add the JitPack repository to your root build.gradle:

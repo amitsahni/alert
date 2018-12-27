@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.single:
                 Dialog.with(this)
-                        .asSingleOption("Ok")
+                        .asSingleOption(R.string.app_name)
                         .title("title")
                         .tag(1)
                         .message("message")
@@ -61,7 +61,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             public void onClick(int tag, DialogInterface dialog, int pos, Button button) {
                                 SnackBar.with(MainActivity.this, button.name())
                                         .actionMessage("Ok")
-                                        .info().show();
+                                        .info()
+                                        .show();
 
                             }
                         })
