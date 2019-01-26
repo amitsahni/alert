@@ -1,9 +1,11 @@
 package test.alert;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -11,16 +13,22 @@ import com.dialog.Dialog;
 import com.dialog.OnDialogClickListener;
 import com.dialog.OnDialogListClickListener;
 import com.pref.PrefUtil;
+import com.pref.SharedPreferenceApp;
+import com.progressView.Builder;
 import com.progressView.CustomDialog;
 import com.snackbar.SnackBar;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import dagger.android.AndroidInjection;
+import test.alert.di.scope.ActivityScope;
 
 /**
  * Created by clickapps on 31/8/17.
  */
-
+@ActivityScope
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @BindView(R.id.single)
     Button single;
@@ -34,16 +42,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.progress)
     Button progress;
 
+    @Inject
+    SharedPreferenceApp sharedPreferenceApp;
+
+    @Inject
+    Builder builder;
+
+    @Inject
+    Context context;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AndroidInjection.inject(this);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         single.setOnClickListener(this);
         dbl.setOnClickListener(this);
         toast.setOnClickListener(this);
         progress.setOnClickListener(this);
-
+        String message = sharedPreferenceApp.getString("abc", "ok");
+        Log.i(getLocalClassName(), "Message = " + message);
+        Log.i(getLocalClassName(), "sharedPreferenceApp = " + sharedPreferenceApp);
+        Log.i(getLocalClassName(), "builder = " + builder);
+        Log.i(getLocalClassName(), "context = " + context);
     }
 
     @Override
